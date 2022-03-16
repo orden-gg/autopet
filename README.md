@@ -1,4 +1,6 @@
-# Aavegotchi auto-petting contracts
+# Aavegotchi autopet proxy contracts
+
+This contract act as a a proxy between user and the petting bot. Allowing for a trustless petting.
 
 User should `setPetOperatorForAll({address of AavegotchiPetting}, true)` before using auto-petting so that it's possible to pet his aavegotchies.
 
