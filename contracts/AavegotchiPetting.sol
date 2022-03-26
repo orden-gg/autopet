@@ -90,6 +90,13 @@ contract AavegotchiPetting is AccessControl {
     }
 
     /**
+     * @dev Is user subscribed
+     */
+    function isSubscribed(address _address) external view returns (bool) {
+        return users.contains(_address);
+    }
+
+    /**
      * @dev Subscribe to the auto-petting service
      * Requires approval of GHST token
      */
