@@ -34,7 +34,8 @@ module.exports = {
       network_id: "*"
     },
     live: {
-      gas: 7900000,
+      gas: 5000000,
+      gasPrice: 50000000000,
       provider: MainProvider,
       from: MainProvider.address,
       network_id: 137
