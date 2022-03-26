@@ -3,12 +3,13 @@ pragma solidity 0.8.13;
 
 import "@openzeppelin/contracts/access/AccessControl.sol";
 import "@openzeppelin/contracts/token/ERC20/utils/SafeERC20.sol";
+import "@openzeppelin/contracts/token/ERC1155/utils/ERC1155Holder.sol";
 import "@openzeppelin/contracts/utils/structs/EnumerableSet.sol";
 
 import './mocks/Aavegotchi.sol';
 import './mocks/GHSTStaking.sol';
 
-contract AavegotchiPetting is AccessControl {
+contract AavegotchiPetting is ERC1155Holder, AccessControl {
     using SafeERC20 for IERC20;
     using EnumerableSet for EnumerableSet.AddressSet;
 
@@ -182,5 +183,9 @@ contract AavegotchiPetting is AccessControl {
         ghstStaking.safeBatchTransferFrom(address(this), _msgSender(), _ids, _values, "");
 
         emit TicketsWithdrawn(_ids, _values);
+    }
+
+    function supportsInterface(bytes4 interfaceId) public view virtual override(AccessControl, ERC1155Receiver) returns (bool) {
+        return super.supportsInterface(interfaceId);
     }
 }
