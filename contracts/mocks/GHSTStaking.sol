@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: MIT
-pragma solidity 0.8.11;
+pragma solidity 0.8.13;
 
 interface GHSTStaking {
     function frens(address _account) external view returns (uint256);
