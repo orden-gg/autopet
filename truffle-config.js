@@ -8,7 +8,7 @@ const MainProvider = new HDWalletProvider({
 
 module.exports = {
   api_keys: {
-    etherscan: ''
+    polygonscan: '7XZSDCSAJEP8K4XMIR38PGW82T5KF82364'
   },
   plugins: [
     'truffle-plugin-verify'
@@ -18,7 +18,7 @@ module.exports = {
   },
   compilers: {
     solc: {
-      version: '0.8.11',
+      version: '0.8.13',
       settings: {
         optimizer: {
           enabled: true,
@@ -34,7 +34,8 @@ module.exports = {
       network_id: "*"
     },
     live: {
-      gas: 7900000,
+      gas: 5000000,
+      gasPrice: 50000000000,
       provider: MainProvider,
       from: MainProvider.address,
       network_id: 137
