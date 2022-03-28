@@ -8,7 +8,7 @@ const MainProvider = new HDWalletProvider({
 
 module.exports = {
   api_keys: {
-    polygonscan: [process.env['POLYGONSCAN_API_KEY']]
+    polygonscan: process.env['POLYGONSCAN_API_KEY']
   },
   plugins: [
     'truffle-plugin-verify'
